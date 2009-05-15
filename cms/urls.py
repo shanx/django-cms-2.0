@@ -6,6 +6,9 @@ urlpatterns = (
     # Public pages
     url(r'^$', details, {'slug':''}, name='pages-root'),
     url(r'^(?P<slug>[0-9A-Za-z-_//]+)/$', details, name='pages-details-by-slug'),
+    
+    # tinymce integration
+    (r'^tinymce/', include('cms.contrib.tinymce.urls')),
 )
 
 if settings.CMS_APPLICATIONS_URLS:
